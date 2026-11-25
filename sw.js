@@ -1,4 +1,4 @@
-const CACHE_NAME = "conectaacao-v2";
+const CACHE_NAME = "conectaacao-v3";
 
 const ARQUIVOS = [
   "./",
@@ -44,8 +44,10 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(event.request).then((respostaEmCache) => {
-      return respostaEmCache || fetch(event.request);
-    }),
+    caches
+      .match(event.request, { ignoreSearch: true })
+      .then((respostaEmCache) => {
+        return respostaEmCache || fetch(event.request);
+      }),
   );
 });
