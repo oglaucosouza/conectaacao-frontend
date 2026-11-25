@@ -1,8 +1,9 @@
-const CACHE_NAME = "conectaacao-v3";
+const CACHE_NAME = "conectaacao-v4";
 
 const ARQUIVOS = [
   "./",
   "./index.html",
+  "./favicon.ico",
   "./main.js",
   "./img/campanha-doacoes.jpg",
   "./manifest.webmanifest",
